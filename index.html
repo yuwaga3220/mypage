@@ -18,65 +18,45 @@
   </head>
   <body>
     <header class="site-header">
-      <div class="container header-inner">
-        <a href="#top" class="logo">Yugo Nagasawa</a>
-        <nav class="nav">
-          <a href="#about">About</a>
-          <a href="#skills">Skills</a>
-          <a href="#works">Works</a>
-          <a href="#experience">Experience</a>
-          <a href="#career">Career</a>
-          <a href="#contact">Contact</a>
-        </nav>
-      </div>
+      <nav class="nav" aria-label="目次">
+        <h2 class="visually-hidden">CONTENTS</h2>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#works">Works</a>
+        <a href="#experience">Experience</a>
+        <a href="#career">Career</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="btn ghost fixed-link-btn" href="https://github.com/yuwaga3220" target="_blank" rel="noreferrer"
+        >GitHub</a
+      >
     </header>
 
     <main id="top">
       <section class="hero section reveal-section">
         <div class="container hero-grid">
-          <div>
+          <div class="hero-copy-block">
             <p class="eyebrow">PORTFOLIO</p>
             <h1>
-              学生エンジニアから、<br />
-              本物のエンジニアへ
+              Student Engineer to <br> Real Engineer.
             </h1>
-            <p class="hero-copy">
-              技術スタック・制作物・経歴を整理しています。
-            </p>
             <div class="hero-actions">
               <a class="btn primary" href="#works">Works</a>
-              <a class="btn ghost" href="https://github.com/yuwaga3220" target="_blank" rel="noreferrer"
-                >GitHub</a
-              >
             </div>
           </div>
-        </div>
-      </section>
-
-      <section id="about" class="section reveal-section">
-        <div class="container">
-          <h2>About</h2>
-          <p class="lead">
-            学生エンジニアです。
-          </p>
-          <div class="about-grid">
-            <article class="panel">
-              <h3>Profile</h3>
-              <p><strong>Name:</strong> Yugo Nagasawa</p>
-              <p><strong>Position:</strong> Student Engineer</p>
-            </article>
-            <article class="panel">
-              <h3>Interests</h3>
-              <ul class="tag-list">
-                <li>Webアプリケーション開発</li>
-                <li>フィールドロボティクス</li>
-                <li>ゲーム</li>
-                <li>テニス</li>
-                <li>お笑い</li>
-                <li>YouTube</li>
-              </ul>
-            </article>
-          </div>
+          <aside class="hero-profile-card" aria-label="プロフィール概要">
+            <h2 class="hero-profile-heading">PROFILE</h2>
+            <div class="hero-photo-frame" aria-label="プロフィール写真枠">
+              <img src="images/profile.png" alt="Yugo Nagasawa" class="hero-profile-image">
+            </div>
+            <h3 class="hero-profile-name">Yugo Nagasawa</h3>
+            <p class="hero-profile-meta">Student Engineer / University of Tsukuba</p>
+            <p class="hero-profile-description">
+              筑波大学大学院 情報理工学位プログラム在学中 <br>
+              Webアプリ開発を中心に、あったらいいなってものを作っています。<br>
+              趣味はテニスとゲーム、お笑い、YouTubeです。
+            </p>
+          </aside>
         </div>
       </section>
 
@@ -206,7 +186,6 @@
       <section id="experience" class="section reveal-section">
         <div class="container">
           <h2>Experience As an Engineer</h2>
-          <p class="experience-timeline__hint">これまでの技術経験をまとめています</p>
           <div class="experience-timeline">
             <ol class="experience-timeline__list">
               <li class="experience-timeline__item">
@@ -219,7 +198,7 @@
                 <div class="experience-timeline__body">
                   <h3 class="experience-timeline__title"> 筑波大学情報系にてCS基礎を学習（2022/4-）</h3>
                   <p>
-                    情報科学類のカリキュラムでアルゴリズム・データ構造、論理回路などの基礎を学習。演習や課題を通じて実装力と設計の考え方を身につけています。
+                    情報科学類のカリキュラムでアルゴリズム・データ構造、論理回路などのCS基礎を学習。演習や課題を通じて実装力と設計の考え方を身につけています。
                   </p>
                 </div>
               </li>
@@ -261,7 +240,7 @@
                 <div class="experience-timeline__body">
                   <h3 class="experience-timeline__title">長期インターン at 株式会社ソフィエイト（2025/5-2026/4）</h3>
                   <p>
-                    POS・ECシステムの保守運用を担当。GASを用いたメディア業務の自動化・効率化に取り組んだ。
+                    POS・ECシステムの保守運用とGAS, OpenAI API, WordPress REST APIを用いたメディア業務の自動化・効率化に取り組んだ。
                   </p>
                 </div>
               </li>
@@ -275,7 +254,7 @@
                 <div class="experience-timeline__body">
                   <h3 class="experience-timeline__title">チーム開発 for Nomiteni（2026/4-）</h3>
                   <p>
-                    認証・認可、cookie、sessionなども取り入れた本格的なWebアプリケーション開発。プロトタイプと開発全般は個人で行った後、チームリーダーとして開発全般の管理を行った。
+                    認証・認可を取り入れた本格的なWebアプリケーション開発。開発全般は自分で行いつつ、チームリーダーとしてサポートメンバーの管理を行った。
                   </p>
                 </div>
               </li>
@@ -303,7 +282,7 @@
                 <div class="experience-timeline__body">
                   <h3 class="experience-timeline__title">長期インターン at Techouse（2026/5-）</h3>
                   <p>
-                    長期インターンとして開発に継続参加。要件の整理から実装・検証までを担い、スピードと品質のバランスを意識した開発経験を積んでいます。
+                    長期インターンとして開発に参加予定。
                   </p>
                 </div>
               </li>
