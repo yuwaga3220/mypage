@@ -12,13 +12,16 @@
   if (!viewport || !track || !prevBtn || !nextBtn || !cards.length) return;
 
   var index = 0;
-  var touchStartX = 0;
-  var touchDx = 0;
+  var slideStep = 0;
+  var dragStartX = 0;
+  var dragDx = 0;
+  var isDragging = false;
+  var didDrag = false;
 
   function slidesPerView() {
     if (window.matchMedia("(max-width: 680px)").matches) return 1;
-    if (window.matchMedia("(max-width: 960px)").matches) return 2;
-    return 3;
+    if (window.matchMedia("(max-width: 960px)").matches) return 1;
+    return 2;
   }
 
   function maxIndex() {
@@ -29,6 +32,10 @@
     var g = window.getComputedStyle(track).columnGap || window.getComputedStyle(track).gap;
     var n = parseFloat(g);
     return isNaN(n) ? 16 : n;
+  }
+
+  function render(offsetX) {
+    track.style.transform = "translateX(" + (-index * slideStep + offsetX) + "px)";
   }
 
   function rebuildDots(pageCount) {
@@ -88,8 +95,8 @@
       card.style.flex = "0 0 " + slideW + "px";
     });
 
-    var step = slideW + gapPx;
-    track.style.transform = "translateX(" + -index * step + "px)";
+    slideStep = slideW + gapPx;
+    render(0);
   }
 
   function goTo(i) {
@@ -118,25 +125,53 @@
     }
   });
 
-  viewport.addEventListener(
-    "touchstart",
-    function (e) {
-      touchStartX = e.touches[0].clientX;
-      touchDx = 0;
-    },
-    { passive: true }
-  );
-  viewport.addEventListener(
-    "touchmove",
-    function (e) {
-      touchDx = e.touches[0].clientX - touchStartX;
-    },
-    { passive: true }
-  );
-  viewport.addEventListener("touchend", function () {
-    if (touchDx > 56) go(-1);
-    else if (touchDx < -56) go(1);
-    touchDx = 0;
+  viewport.addEventListener("pointerdown", function (e) {
+    if (e.button !== undefined && e.button !== 0) return;
+    isDragging = true;
+    didDrag = false;
+    dragStartX = e.clientX;
+    dragDx = 0;
+    root.classList.add("is-dragging");
+    viewport.setPointerCapture(e.pointerId);
+  });
+
+  viewport.addEventListener("pointermove", function (e) {
+    if (!isDragging) return;
+    dragDx = e.clientX - dragStartX;
+    if (Math.abs(dragDx) > 6) didDrag = true;
+    render(dragDx);
+  });
+
+  function finishDrag(e) {
+    if (!isDragging) return;
+    isDragging = false;
+    root.classList.remove("is-dragging");
+    if (viewport.hasPointerCapture && viewport.hasPointerCapture(e.pointerId)) {
+      viewport.releasePointerCapture(e.pointerId);
+    }
+
+    var threshold = Math.min(120, Math.max(56, slideStep * 0.16));
+    if (dragDx > threshold) go(-1);
+    else if (dragDx < -threshold) go(1);
+    else layout();
+
+    dragDx = 0;
+  }
+
+  viewport.addEventListener("pointerup", finishDrag);
+  viewport.addEventListener("pointercancel", finishDrag);
+  viewport.addEventListener("lostpointercapture", function () {
+    if (!isDragging) return;
+    isDragging = false;
+    root.classList.remove("is-dragging");
+    layout();
+  });
+
+  viewport.addEventListener("click", function (e) {
+    if (!didDrag) return;
+    e.preventDefault();
+    e.stopPropagation();
+    didDrag = false;
   });
 
   var ro =
