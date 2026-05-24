@@ -18,6 +18,14 @@
   var isDragging = false;
   var didDrag = false;
 
+  function isInteractiveTarget(target) {
+    return (
+      target &&
+      target.closest &&
+      target.closest("a, button, input, textarea, select, label, [role='button']")
+    );
+  }
+
   function slidesPerView() {
     if (window.matchMedia("(max-width: 680px)").matches) return 1;
     if (window.matchMedia("(max-width: 960px)").matches) return 1;
@@ -127,6 +135,7 @@
 
   viewport.addEventListener("pointerdown", function (e) {
     if (e.button !== undefined && e.button !== 0) return;
+    if (isInteractiveTarget(e.target)) return;
     isDragging = true;
     didDrag = false;
     dragStartX = e.clientX;
@@ -169,6 +178,7 @@
 
   viewport.addEventListener("click", function (e) {
     if (!didDrag) return;
+    if (isInteractiveTarget(e.target)) return;
     e.preventDefault();
     e.stopPropagation();
     didDrag = false;

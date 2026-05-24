@@ -438,11 +438,14 @@ h1 {
   gap: 1rem;
 }
 
-.skills-list .tag-list li {
-  font-size: clamp(1rem, 0.5vw + 0.92rem, 1.15rem);
-  font-weight: 700;
-  letter-spacing: -0.01em;
-  padding: 0.85rem 1.45rem;
+.skills-list .skill-tags li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  text-align: center;
+  min-width: 9.5rem;
+  padding: 0.85rem 1.25rem 0.95rem;
   border: 2px solid rgb(37 99 235 / 35%);
   border-radius: 14px;
   background: #ffffff;
@@ -459,7 +462,22 @@ h1 {
     box-shadow 0.22s ease;
 }
 
-.skills-list .tag-list li:hover {
+.skill-tag__name {
+  font-size: clamp(1rem, 0.5vw + 0.92rem, 1.15rem);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.skill-tag__note {
+  font-size: 0.78rem;
+  font-weight: 500;
+  line-height: 1.35;
+  color: rgb(17 24 39 / 62%);
+  transition: color 0.22s ease;
+}
+
+.skills-list .skill-tags li:hover {
   transform: translateY(-3px);
   border-color: var(--accent);
   background: var(--accent);
@@ -467,6 +485,10 @@ h1 {
   box-shadow:
     0 14px 28px rgb(37 99 235 / 28%),
     0 6px 14px rgb(17 24 39 / 10%);
+}
+
+.skills-list .skill-tags li:hover .skill-tag__note {
+  color: rgb(255 255 255 / 88%);
 }
 
 .lead {
@@ -938,6 +960,22 @@ h1 {
   font-weight: 600;
 }
 
+.work-image:has(img) {
+  display: block;
+  padding: 0;
+  overflow: hidden;
+  background: rgb(17 24 39 / 4%);
+}
+
+.work-image img {
+  display: block;
+  width: 100%;
+  min-height: 190px;
+  max-height: 280px;
+  object-fit: cover;
+  object-position: top center;
+}
+
 .work-card h3 {
   font-size: clamp(1.25rem, 0.8vw + 1rem, 1.55rem);
   margin-bottom: 0.75rem;
@@ -960,6 +998,8 @@ h1 {
 .work-links a {
   display: inline-flex;
   align-items: center;
+  cursor: pointer;
+  user-select: auto;
   min-height: 2.25rem;
   padding: 0.35rem 0.75rem;
   border: 1px solid rgb(16 16 16 / 16%);
