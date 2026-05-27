@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Engineer Portfolio | Yugo Nagasawa</title>
+    <title>Portfolio | Yugo Nagasawa</title>
     <meta
       name="description"
-      content="エンジニアとしての技術スタック・経歴・制作物を1ページで分かりやすくまとめたポートフォリオサイト。"
+      content="Yugo Nagasawaのポートフォリオサイト。Webアプリ開発、研究、インターン、制作物をまとめています。"
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -20,16 +20,19 @@
     <header class="site-header">
       <nav class="nav" aria-label="目次">
         <h2 class="visually-hidden">CONTENTS</h2>
-        <a href="#about">ABOUT</a>
-        <a href="#skills">SKILL</a>
-        <a href="#works">WORKS</a>
-        <a href="#experience">EXPERIENCE</a>
-        <a href="#career">CAREER</a>
-        <a href="#contact">CONTACT</a>
+        <a href="#skills">Skills</a>
+        <a href="#works">Works</a>
+        <a href="#experience">Experience</a>
+        <a href="#career">Career</a>
+        <a href="#contact">Contact</a>
       </nav>
-      <a class="btn ghost fixed-link-btn" href="https://github.com/yuwaga3220" target="_blank" rel="noreferrer"
-        >GitHub</a
-      >
+      <a class="btn ghost fixed-link-btn" href="https://github.com/yuwaga3220" target="_blank" rel="noreferrer" aria-label="GitHub">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path
+            d="M12 2C6.48 2 2 6.58 2 12.26c0 4.52 2.87 8.35 6.84 9.7.5.1.68-.22.68-.49 0-.24-.01-.87-.01-1.7-2.78.62-3.37-1.36-3.37-1.36-.45-1.18-1.12-1.5-1.12-1.5-.92-.64.07-.63.07-.63 1.02.07 1.55 1.07 1.55 1.07.9 1.57 2.36 1.12 2.94.85.09-.67.35-1.12.64-1.38-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.7 0 0 .84-.27 2.75 1.05A9.2 9.2 0 0 1 12 6.84c.85 0 1.71.12 2.51.35 1.91-1.32 2.75-1.05 2.75-1.05.55 1.4.2 2.44.1 2.7.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.07.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.8 0 .27.18.6.69.5A10.03 10.03 0 0 0 22 12.26C22 6.58 17.52 2 12 2Z"
+          />
+        </svg>
+      </a>
     </header>
 
     <main id="top">
@@ -46,15 +49,15 @@
           </div>
           <aside class="hero-profile-card" aria-label="プロフィール概要">
             <h2 class="hero-profile-heading">PROFILE</h2>
-            <div class="hero-photo-frame" aria-label="プロフィール写真枠">
+            <div class="hero-photo-frame" aria-label="プロフィール写真">
               <img src="images/profile.png" alt="Yugo Nagasawa" class="hero-profile-image">
             </div>
             <h3 class="hero-profile-name">Yugo Nagasawa</h3>
-            <p class="hero-profile-meta">Student Engineer / University of Tsukuba</p>
+            <p class="hero-profile-meta">University of Tsukuba</p>
             <p class="hero-profile-description">
-              筑波大学大学院 在学中 <br>
-              Webアプリ開発を学んでいます。<br>
-              趣味はテニスとゲーム、お笑い、YouTubeです。
+              筑波大学大学院で建設機械とARを組み合わせた研究をしながら、
+              Web系エンジニアを目指してWebアプリ開発を学んでいます。
+              趣味はテニス、ゲーム、お笑い、YouTubeです。
             </p>
           </aside>
         </div>
@@ -62,21 +65,20 @@
 
       <section id="skills" class="section reveal-section">
         <div class="container">
-          <h2>Skills</h2>
+          <h2>SKILLS</h2>
           <div class="skills-list">
             <ul class="tag-list skill-tags">
-              
               <li class="skill-tag">
                 <span class="skill-tag__name">Ruby on Rails</span>
-                <span class="skill-tag__note">長期インターンにて使用</span>
+                <span class="skill-tag__note">長期インターンで使用</span>
               </li>
               <li class="skill-tag">
                 <span class="skill-tag__name">Python / FastAPI</span>
-                <span class="skill-tag__note">研究でのシステム開発に使用</span>
+                <span class="skill-tag__note">研究用システム開発で使用</span>
               </li>
               <li class="skill-tag">
                 <span class="skill-tag__name">TypeScript / React / Next.js</span>
-                <span class="skill-tag__note">個人開発で利用</span>
+                <span class="skill-tag__note">個人開発で使用</span>
               </li>
             </ul>
           </div>
@@ -85,7 +87,7 @@
 
       <section id="works" class="section reveal-section">
         <div class="container">
-          <h2>Works</h2>
+          <h2>WORKS</h2>
           <div
             class="works-carousel"
             data-works-carousel
@@ -109,8 +111,10 @@
               <div class="works-track">
                 <article class="panel work-card">
                   <div class="work-image" aria-hidden="true">Project Image</div>
-                  <h3>Nomiteni</h3>
-                  <p>テニスの大会運営自動化アプリ。</p>
+                  <h3>のみてに</h3>
+                  <p>
+                    テニスの大会運営自動化アプリ。大会の作成から進行、試合結果の出力までを簡単に行えるようにしました。試合結果をリアルタイムに共有できる観戦機能も備えています。
+                  </p>
                   <p><strong>Stack:</strong> TypeScript, Next.js, React</p>
                   <div class="work-links">
                     <a href="https://github.com/yuwaga3220/nomiteni" target="_blank" rel="noreferrer">GitHub</a>
@@ -129,7 +133,9 @@
                     />
                   </div>
                   <h3>GGWP Scheduler</h3>
-                  <p>ゲームコミュニティ向けに、日々の予定を共有・調整するチャットボット。</p>
+                  <p>
+                    日々のゲームプレイ予定の投票箱を投稿し、集計結果をグラフとして出力するDiscordボット。ゲームコミュニティ内の予定調整コスト削減を目指しました。
+                  </p>
                   <p><strong>Stack:</strong> TypeScript, discord.js</p>
                   <div class="work-links">
                     <a href="https://github.com/yuwaga3220/ggwp_scheduler" target="_blank" rel="noreferrer">GitHub</a>
@@ -148,13 +154,12 @@
                     />
                   </div>
                   <h3>Portfolio Website</h3>
-                  <p>スキル・経歴・制作物を1ページにまとめた静的なポートフォリオサイト（本サイト）。</p>
+                  <p>スキル、経歴、制作物を1ページにまとめたポートフォリオサイトです。HTML、CSS、JavaScriptで制作しています。</p>
                   <p><strong>Stack:</strong> HTML, CSS, JavaScript</p>
                   <div class="work-links">
                     <a href="https://github.com/yuwaga3220/mypage" target="_blank" rel="noreferrer">GitHub</a>
                   </div>
                 </article>
-
               </div>
             </div>
             <button type="button" class="works-nav works-nav--next" aria-label="次の作品へ">
@@ -175,63 +180,55 @@
 
       <section id="experience" class="section reveal-section">
         <div class="container">
-          <h2>Experience as an Engineer</h2>
+          <h2>EXPERIENCE</h2>
           <div class="experience-timeline">
             <ol class="experience-timeline__list">
               <li class="experience-timeline__item">
-                <time class="experience-timeline__time" datetime="2025-01/2025-04"></time>
+                <time class="experience-timeline__time" datetime="2022-04"></time>
                 <div class="experience-timeline__node" aria-hidden="true">
                   <span class="experience-timeline__dot"></span>
                   <span class="experience-timeline__arm"></span>
                   <span class="experience-timeline__arrow">→</span>
                 </div>
                 <div class="experience-timeline__body">
-                  <h3 class="experience-timeline__title"> 筑波大学情報系にてCS基礎を学習（2022/4-）</h3>
-                  <p>
-                    情報科学類のカリキュラムでアルゴリズム・データ構造、論理回路などのCS基礎を学習。
-                  </p>
+                  <h3 class="experience-timeline__title">筑波大学情報学群でCS基礎を学習</h3>
+                  <p>アルゴリズム、データ構造、ネットワーク、データベースなどの基礎を学び、演習や課題を通して実装力を身につけました。</p>
                 </div>
               </li>
               <li class="experience-timeline__item">
-                <time class="experience-timeline__time" datetime="2025-01/2025-04">2025</time>
+                <time class="experience-timeline__time" datetime="2025-04">2025</time>
                 <div class="experience-timeline__node" aria-hidden="true">
                   <span class="experience-timeline__dot"></span>
                   <span class="experience-timeline__arm"></span>
                   <span class="experience-timeline__arrow">→</span>
                 </div>
                 <div class="experience-timeline__body">
-                  <h3 class="experience-timeline__title">基本情報技術者・応用情報技術者 資格取得（2025/4）</h3>
-                  <p>
-                    基礎のアウトプットのため、ネットワーク、データベース、セキュリティなど幅広いIT分野の知識を習得。
-                  </p>
+                  <h3 class="experience-timeline__title">基本情報技術者・応用情報技術者 資格取得</h3>
+                  <p>IT基礎、ネットワーク、データベース、セキュリティなどを体系的に学習しました。</p>
                 </div>
               </li>
               <li class="experience-timeline__item">
-                <time class="experience-timeline__time" datetime="2025-05/2026-04"></time>
+                <time class="experience-timeline__time" datetime="2025-05"></time>
                 <div class="experience-timeline__node" aria-hidden="true">
                   <span class="experience-timeline__dot"></span>
                   <span class="experience-timeline__arm"></span>
                   <span class="experience-timeline__arrow">→</span>
                 </div>
                 <div class="experience-timeline__body">
-                  <h3 class="experience-timeline__title">長期インターン at 株式会社ソフィエイト（2025/5-2026/4）</h3>
-                  <p>
-                    POS・ECシステムの保守とGAS, OpenAI API, WordPress REST APIを用いたメディア業務の自動化・効率化に取り組んだ。
-                  </p>
+                  <h3 class="experience-timeline__title">長期インターン（大学発ITベンチャー）</h3>
+                  <p>POS・ECシステムの保守や、GAS、OpenAI API、WordPress REST APIを用いた業務自動化に取り組みました。</p>
                 </div>
               </li>
               <li class="experience-timeline__item">
-                <time class="experience-timeline__time" datetime="2026-04"></time>
+                <time class="experience-timeline__time" datetime="2025-06"></time>
                 <div class="experience-timeline__node" aria-hidden="true">
                   <span class="experience-timeline__dot"></span>
                   <span class="experience-timeline__arm"></span>
                   <span class="experience-timeline__arrow">→</span>
                 </div>
                 <div class="experience-timeline__body">
-                  <h3 class="experience-timeline__title">個人開発（2025/6-）</h3>
-                  <p>
-                    Discordボットやテニスの大会運営を自動化するWebアプリケーションを個人開発。
-                  </p>
+                  <h3 class="experience-timeline__title">個人開発</h3>
+                  <p>Discordボットやテニス大会運営を自動化するWebアプリケーションを開発しました。</p>
                 </div>
               </li>
               <li class="experience-timeline__item">
@@ -242,10 +239,8 @@
                   <span class="experience-timeline__arrow">→</span>
                 </div>
                 <div class="experience-timeline__body">
-                  <h3 class="experience-timeline__title">研究開発（2025/4-）</h3>
-                  <p>
-                    フィールドロボティクス研究室にて、現場を要求を考慮した重機の遠隔操縦のAR支援インタフェースをWebアプリケーションとして開発。
-                  </p>
+                  <h3 class="experience-timeline__title">研究開発</h3>
+                  <p>現場要求をもとに、重機の遠隔操作を支援するARインターフェースとWebアプリケーションの開発に取り組んでいます。</p>
                 </div>
               </li>
               <li class="experience-timeline__item">
@@ -256,10 +251,8 @@
                   <span class="experience-timeline__arrow">→</span>
                 </div>
                 <div class="experience-timeline__body">
-                  <h3 class="experience-timeline__title">就業型インターン（2026/5-）</h3>
-                  <p>
-                    研修ではRuby on Railsを用いたセキュアなアプリケーションを開発。就業型インターンとして実務を経験。
-                  </p>
+                  <h3 class="experience-timeline__title">長期インターン（Web開発企業）</h3>
+                  <p>Ruby on Railsを用いたWebアプリケーション開発を経験し、実務に近い開発プロセスを学びました。</p>
                 </div>
               </li>
             </ol>
@@ -269,26 +262,32 @@
 
       <section id="career" class="section reveal-section">
         <div class="container">
-          <h2>Career</h2>
+          <h2>CAREER</h2>
           <div class="timeline">
             <article class="panel timeline-item">
-              <h3>筑波大学 情報学群 情報科学類 学士課程（2026年卒業）</h3>
-              <p>2022/4 - 2024/9　テニスサークル所属 大会運営団体に所属</p>
-              <p>2025/4 - 個人開発</p>
+              <div class="timeline-item__content">
+                <h3>筑波大学 情報学群 情報科学類 学士課程（2026年卒業）</h3>
+                <p>研究テーマ: 重資材運搬を目的とした建設機械の遠隔操作支援手法の提案と評価</p>
+              </div>
             </article>
             <article class="panel timeline-item">
-              <h3>筑波大学大学院 システム情報工学研究群（2028年卒業予定）</h3>
-              <p>2026/4 - 2028/3　フィールドロボティクス研究室</p>
-              <p>2026/6　ROBOMECH2026にて学会発表</p>
+              <div class="timeline-item__content">
+                <h3>筑波大学大学院 システム情報工学研究群 修士課程（2028年卒業予定）</h3>
+                <p>研究テーマ: 建設機械の遠隔操作を支援するARシステムの開発</p>
+              </div>
             </article>
-
+            <article class="panel timeline-item timeline-item--next">
+              <div class="timeline-item__content">
+                <h3>Next?</h3>
+              </div>
+            </article>
           </div>
         </div>
       </section>
 
       <section id="contact" class="section reveal-section">
         <div class="container">
-          <h2>Contact</h2>
+          <h2>CONTACT</h2>
           <div class="contact-icons">
             <a
               class="contact-icon-btn"
