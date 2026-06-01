@@ -1,6 +1,6 @@
 // スクロールアニメーション
 (function () {
-  var sections = document.querySelectorAll(".reveal-section");
+  var sections = document.querySelectorAll(".section.is-reveal");
   if (!sections.length) return;
 
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
@@ -20,7 +20,6 @@
     },
     {
       root: null,
-      /* 少し手前で発火させ、フェードの変化が目に入りやすくする */
       rootMargin: "0px 0px 100px 0px",
       threshold: 0.05,
     }
