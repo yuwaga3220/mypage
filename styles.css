@@ -73,6 +73,50 @@ body {
   color: var(--sidebar-text);
   border-right: 1px solid var(--sidebar-border);
   box-shadow: 8px 0 32px rgb(6 20 40 / 18%);
+  overflow: hidden;
+}
+
+.shooting-star {
+  position: absolute;
+  width: 55px;
+  height: 1.5px;
+  background: linear-gradient(90deg, transparent 0%, rgb(255 255 255 / 50%) 100%);
+  border-radius: 2px;
+  pointer-events: none;
+  opacity: 0;
+  animation: shooting-star-fall 0.75s ease-out forwards;
+  will-change: transform, opacity;
+}
+
+@keyframes shooting-star-fall {
+  0%   { opacity: 0;    transform: translateX(0); }
+  20%  { opacity: 0.28; }
+  100% { opacity: 0;    transform: translateX(80px); }
+}
+
+/* Cursor trail */
+.cursor-trail {
+  position: fixed;
+  height: 2px;
+  border-radius: 2px;
+  pointer-events: none;
+  transform-origin: center center;
+  translate: -50% -50%;
+  animation: cursor-trail-fade 0.25s ease-out forwards;
+  z-index: 9999;
+}
+
+.cursor-trail[data-zone="sidebar"] {
+  background: linear-gradient(90deg, transparent, rgb(191 219 254 / 35%));
+}
+
+.cursor-trail[data-zone="main"] {
+  background: linear-gradient(90deg, transparent, rgb(11 31 58 / 14%));
+}
+
+@keyframes cursor-trail-fade {
+  0%   { opacity: 1; }
+  100% { opacity: 0; }
 }
 
 .sidebar__inner {
