@@ -5,13 +5,16 @@
 
   var email = button.getAttribute("data-copy-email") || "";
   var defaultLabel = button.getAttribute("aria-label") || "メールアドレスをコピー";
+  var isEnglish = document.documentElement.lang === "en";
+  var copiedLabel = isEnglish ? "Copied" : "コピーしました";
+  var failedLabel = isEnglish ? "Failed to copy" : "コピーに失敗しました";
   var resetTimer;
 
   function showFeedback() {
     if (feedback) {
       feedback.hidden = false;
     }
-    button.setAttribute("aria-label", "コピーしました");
+    button.setAttribute("aria-label", copiedLabel);
 
     clearTimeout(resetTimer);
     resetTimer = window.setTimeout(function () {
@@ -44,7 +47,7 @@
           copyWithFallback(email);
           showFeedback();
         } catch (_err) {
-          button.setAttribute("aria-label", "コピーに失敗しました");
+          button.setAttribute("aria-label", failedLabel);
         }
       });
       return;
@@ -54,7 +57,7 @@
       copyWithFallback(email);
       showFeedback();
     } catch (_err) {
-      button.setAttribute("aria-label", "コピーに失敗しました");
+      button.setAttribute("aria-label", failedLabel);
     }
   });
 })();
